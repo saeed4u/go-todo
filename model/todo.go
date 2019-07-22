@@ -10,3 +10,4 @@ type Todo struct {
 	Description string `json:"description"`
 	UserId uint `json:"user_id"`
 }
+
