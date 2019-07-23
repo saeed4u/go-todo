@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"go-to/controllers"
+	"github.com/saeed4u/go-todo/controllers"
 	"net/http"
 )
 
@@ -11,11 +11,10 @@ type Route struct {
 	Handler http.HandlerFunc
 }
 
-func authRoutes() []Route {
-	return []Route{{"login", "POST", controllers.createAccount}, {"register", "POST", controllers.login}}
+func AuthRoutes() []Route {
+	return []Route{{"/login", "POST", controllers.CreateAccount}, {"/register", "POST", controllers.Login}}
 }
 
-func todoRoutes() []Route {
-	//CRUD
-	return []Route{{"/", "GET", controllers.getAllTodos}, {"/", "POST", controllers.createTodo}, {"/:todoId", "GET", controllers.getTodo}, {"update", "PATCH", controllers.updateTodo}, {"delete", "DELETE", controllers.deleteTodo}}
+func TodoRoutes() []Route {
+	return []Route{{"/", "GET", controllers.GetAllTodos}, {"/", "POST", controllers.CreateTodo}, {"/:todoId", "GET", controllers.GetTodo}, {"/update", "PATCH", controllers.UpdateTodo}, {"/delete", "DELETE", controllers.DeleteTodo}}
 }

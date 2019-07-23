@@ -1,12 +1,17 @@
 package controllers
 
-import "net/http"
+import (
+	"github.com/saeed4u/go-todo/util"
+	"net/http"
+)
 
-var createAccount = func(w http.ResponseWriter, r *http.Request) {}
+var CreateAccount = func(w http.ResponseWriter, r *http.Request) {
+	util.Respond(w,r,util.Message(false, "Well"))
+}
 
-var login = func(w http.ResponseWriter, r *http.Request) {
+var Login = func(w http.ResponseWriter, r *http.Request) {
 
 }
-var resetPassword = func(w http.ResponseWriter, r *http.Request) {
+var ResetPassword = func(w http.ResponseWriter, r *http.Request) {
 
 }
