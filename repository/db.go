@@ -22,7 +22,7 @@ func init() {
 	dbPassword := os.Getenv("dbPassword")
 	dbName := os.Getenv("dbName")
 
-	connString := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local", dbUsername, dbPassword,dbHost,dbPort,dbName)
+	connString := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local&serverTimezone=UTC", dbUsername, dbPassword,dbHost,dbPort,dbName)
 
 	db_, err := gorm.Open("mysql",connString)
 	if err != nil {
